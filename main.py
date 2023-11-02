@@ -7,7 +7,7 @@ def button(frame):
              font=('arial',60,'bold'),relief="sunken",bd=10)
     return choice
 
-def change_a():            
+def playerChoice():            
     global player
     for i in ['O','X']:
         if not(i==player):
@@ -41,7 +41,7 @@ def check():
 def click(row,col):
         choice[row][col].config(text=player,state=DISABLED,disabledforeground=colour[player])
         check()
-        change_a()
+        playerChoice()
         label.config(text=player+"'s Chance")
 
 root=Tk()
