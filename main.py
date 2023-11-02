@@ -14,7 +14,7 @@ def change_a():
             player=i
             break
 
-def reset():                
+def reset():
     global player
     for i in range(3):
         for j in range(3):
