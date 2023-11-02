@@ -21,7 +21,7 @@ def reset():
                 choice[i][j]["text"]=" "
                 choice[i][j]["state"]=NORMAL
     player=random.choice(['O','X'])
-    
+
 def check():                
     for i in range(3):
             if(choice[i][0]["text"] == choice[i][1]["text"] == choice[i][2]["text"] == player
