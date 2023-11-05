@@ -22,16 +22,21 @@ def reset():
                 choice[i][j]["state"]=NORMAL
     player=random.choice(['O','X'])
 
-def check():                
+def check(): 
+    # horizontal and vertical check                
     for i in range(3):
-            if(choice[i][0]["text"] == choice[i][1]["text"] == choice[i][2]["text"] == player
-               or choice[0][i]["text"] == choice[1][i]["text"] == choice[2][i]["text"] == player):
-                    messagebox.showinfo("Congrats!!","'"+player+"' has won")
-                    reset()
+        if(choice[i][0]["text"] == choice[i][1]["text"] == choice[i][2]["text"] == player
+        or choice[0][i]["text"] == choice[1][i]["text"] == choice[2][i]["text"] == player):
+            messagebox.showinfo("Congrats!!","'"+player+"' has won")
+            reset()
+
+    # diagonal check
     if(choice[0][0]["text"] == choice[1][1]["text"] == choice[2][2]["text"] == player
        or choice[0][2]["text"] == choice[1][1]["text"] == choice[2][0]["text"] == player):
-        messagebox.showinfo("Congrats!!","'"+player+"' has won")
-        reset()   
+        messagebox.showinfo("Congrats!!","'"+player+"' has wonn!")
+        reset() 
+
+    # draw check
     elif(choice[0][0]["state"] == choice[0][1]["state"] == choice[0][2]["state"]
          == choice[1][0]["state"] == choice[1][1]["state"] == choice[1][2]["state"]
          == choice[2][0]["state"] == choice[2][1]["state"] == choice[2][2]["state"] == DISABLED):
